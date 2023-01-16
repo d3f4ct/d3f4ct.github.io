@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8" />
 <title>Ubicaciones | More Money Transfers</title>
@@ -11,7 +11,7 @@
 <style>
 body {
 color: #404040;
-font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+font: 400 15px/22px 'Nunito Sans', sans-serif;
 margin: 0;
 padding: 0;
 -webkit-font-smoothing: antialiased;
@@ -48,12 +48,9 @@ padding: 20px 2px;
 }
  
 a {
-color: #404040;
+color: #ffffff;
 text-decoration: none;
-}
- 
-a:hover {
-color: #101010;
+border: none;
 }
  
 .heading {
@@ -62,7 +59,7 @@ border-bottom: 1px solid #eee;
 min-height: 60px;
 line-height: 60px;
 padding: 0 10px;
-background-color: #00853e;
+background-color: #EE7F00;
 color: #fff;
 }
  
@@ -84,7 +81,7 @@ border-bottom: none;
 }
 .listings .item .title {
 display: block;
-color: #00853e;
+color: #EE7F00;
 font-weight: 700;
 }
  
@@ -93,7 +90,7 @@ font-weight: 400;
 }
 .listings .item.active .title,
 .listings .item .title:hover {
-color: #8cc63f;
+color: #f3a54c;
 }
 .listings .item.active {
 background-color: #f8f8f8;
@@ -108,7 +105,7 @@ background: rgba(0, 0, 0, 0.1);
 background: none;
 }
 ::-webkit-scrollbar-thumb {
-background: #00853e;
+background: #EE7F00;
 border-radius: 0;
 }
  
@@ -129,12 +126,12 @@ padding-bottom: 50px;
 display: none;
 }
 .mapboxgl-popup-content {
-font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+font: 400 15px/22px 'Nunito Sans', sans-serif;
 padding: 0;
 width: 180px;
 }
 .mapboxgl-popup-content h3 {
-background: #91c949;
+background: #EE7F00;
 color: #fff;
 margin: 0;
 padding: 10px;
@@ -150,9 +147,16 @@ font-weight: 400;
 }
 
 .mapboxgl-popup-content h5 {
+background: #EE7F00;
 margin: 0;
 padding: 10px;
 font-weight: 400;
+border: none;
+}
+
+.mapboxgl-popup-content h5:hover {
+background: #f3a54c;
+border: none;
 }
  
 .mapboxgl-popup-content div {
@@ -164,7 +168,7 @@ margin-top: 15px;
 }
  
 .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-border-bottom-color: #91c949;
+border-bottom-color: #EE7F00;
 }
 
 .mapboxgl-ctrl-geocoder {
@@ -182,18 +186,18 @@ margin-left: 0;
 }
 
 .mapboxgl-ctrl-bottom-right {
-display: none;
+display: true;
 }
 
 .mapboxgl-ctrl-bottom-left {
-display: none;
+display: true;
 }
 </style>
 </head>
 <body>
 <div class="sidebar">
 <div class="heading">
-<h1>Our locations</h1>
+<h1>More Money Transfers</h1>
 </div>
 <div id="listings" class="listings"></div>
 </div>
@@ -207,42 +211,169 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGFub2dsb2JhbCIsImEiOiJjbGJqbmZnYmEwaXF2M3Bue
 const map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v12',
-center: [-77.034084142948, 38.909671288923],
-zoom: 13,
-scrollZoom: true
+center: [-64.635533, -16.675080],
+zoom: 5,
+scrollZoom: true,
+attributionControl: false
 });
  
 const stores = {
 'type': 'FeatureCollection',
 'features': [
 {
-'type': 'Feature',
+    'type': 'Feature',
 'geometry': {
 'type': 'Point',
-'coordinates': [-77.034084142948, 38.909671288923]
+'coordinates': [-66.159196,-17.392150]
 },
 'properties': {
-'phoneFormatted': '(202) 234-7336',
-'phone': '2022347336',
-'address': '1471 P St NW',
-'city': 'Washington DC',
-'country': 'United States',
-'crossStreet': 'at 15th St NW',
-'postalCode': '20005',
-'state': 'D.C.'
+'agency': 'More Bolivia - Oficina Central<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>76499999<br><b>Horarios:</b><br>Lunes a Viernes<br>8:00 - 13:00<br>Sabados<br>09:00 - 13:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Av. Ayacucho No. 137 Entre Av. Heroínas Y C. Colombia',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.392150,-66.159196'><b>COMO LLEGAR</b></a>",
 }
 },
 {
 'type': 'Feature',
 'geometry': {
 'type': 'Point',
-'coordinates': [-77.043959498405, 38.903883387232]
+'coordinates': [-66.157039,-17.396123]
 },
 'properties': {
-'agency': 'More Bolivia - Oficina Central<br>COCHABAMBA',
-'popupdata': '<b>Telefono:</b><br>76499999<br><b>Horarios:</b><br>Lunes a Viernes<br>8:00 - 13:00<br>Sabados<br>09:00 - 13:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
-'address': 'Av. Ayacucho No. 137 Entre Av. Heroínas Y C. Colombia',
+'agency': 'More Bolivia - Banco Economico<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44155500<br><b>Horarios:</b><br>Lunes a Viernes<br>8:00 - 13:00<br>Sabados<br>09:00 - 13:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Nataniel Aguirre No. 459 entre Jordan y Calama',
 'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.396123,-66.157039'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.156372,-17.386741]
+},
+'properties': {
+'agency': 'More Bolivia - Bancomunidad<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44523001<br><b>Horarios:</b><br>Lunes a Viernes<br>9:00 - 17:00<br>Sabados<br>09:00 - 12:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Av. José Ballivian No. 576 entre Chuquisaca y Mexico',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.386741, -66.156372'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.156751,-17.398145]
+},
+'properties': {
+'agency': 'More Bolivia - Banco FIE<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44220084<br><b>Horarios:</b><br>Lunes a Viernes<br>8:30 - 16:00<br>Sabados<br>08:30 - 12:30<br><b>Servicios:</b><br>PAGOS<br>',
+'address': 'Nataniel Aguirre No. 459 entre Jordan y Calama',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.398145, -66.156751'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.187500,-17.354852]
+},
+'properties': {
+'agency': 'More Bolivia - Banco Ecofuturo<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44304444<br><b>Horarios:</b><br>Lunes a Viernes<br>9:00 - 16:45<br>Sabados<br>09:00 - 12:30<br><b>Servicios:</b><br>PAGOS<br>',
+'address': 'Av Simón López No. 2154, Cruce Taquiña',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.354852,-66.187500'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.157275,-17.395555]
+},
+'properties': {
+'agency': 'More Bolivia - Banco Nacional de Bolivia<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44153999<br><b>Horarios:</b><br>Lunes a Viernes<br>8:00 - 16:00<br>Sabados<br>09:00 - 13:00<br><b>Servicios:</b><br>PAGOS<br>',
+'address': 'Calle Nataniel Aguirre Nº  E-198, esq. Jordán',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.395555,-66.157275'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.152773,-17.411910]
+},
+'properties': {
+'agency': 'More Bolivia - Coop. San Pedro de Aiquile<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44527555<br><b>Horarios:</b><br>Lunes a Viernes<br>8:30 - 16:00<br>Sabados<br>08:30 - 12:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Av. 6 de agosto entre Barrientos y República Nº 440',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.411910,-66.152773'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.161351,-17.377830]
+},
+'properties': {
+'agency': 'More Bolivia - Casa de Cambios AMANDA<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44504024<br><b>Horarios:</b><br>Lunes a Viernes<br>8:30 - 17:30<br>Sabados<br>08:30 - 13:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Av. Libertador Bolivar Casi Esq. Juan de la Rosa # 1227',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.377830,-66.161351'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-65.934121,-17.592376]
+},
+'properties': {
+'agency': 'More Bolivia - Banco Fassil<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>33158000<br><b>Horarios:</b><br>Lunes a Viernes<br>9:00 - 16:00<br>Sabados<br>08:30 - 12:30<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Plaza 21 de Septiembre  esq. Calle Francisco del Rivero',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.592376,-65.934121'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.149922,-17.390607]
+},
+'properties': {
+'agency': 'More Bolivia - Transfer ANDINA<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44793863<br><b>Horarios:</b><br>Lunes a Viernes<br>9:00 - 17:00<br>Sabados<br>09:00 - 13:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Av. Oquendo N° 121 entre heroinas y colombia',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.390607,-66.149922'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.156530,-17.399023]
+},
+'properties': {
+'agency': 'More Bolivia - MUNDISERVICES<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44235595<br><b>Horarios:</b><br>Lunes a Viernes<br>9:00 - 18:00<br>Sabados<br>09:00 - 13:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Calle Nataniel Aguirre Nº719 entre Calle Uruguay y Av. Aroma',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.399023, -66.156530'>COMO LLEGAR</a>",
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.150986,-17.409969]
+},
+'properties': {
+'agency': 'More Bolivia - DIACONIA<br>COCHABAMBA',
+'popupdata': '<b>Telefono:</b><br>44553687<br><b>Horarios:</b><br>Lunes a Viernes<br>6:00 - 19:00<br>Sabados<br>06:00 - 17:00<br><b>Servicios:</b><br>PAGOS Y ENVIOS<br>',
+'address': 'Av. Republica, Nº 1822, esquina calle Manuripi, Zona San Carlos.',
+'gps': "<a href='https://www.google.com/maps/dir/?api=1&origin=&destination=-17.409969,-66.150986'>COMO LLEGAR</a>",
 }
 }
 ]
@@ -276,7 +407,7 @@ function forwardGeocoder(query) {
             accessToken: mapboxgl.accessToken,
             localGeocoder: forwardGeocoder,
             zoom: 14,
-            placeholder: 'Enter search e.g. Lincoln Park',
+            placeholder: 'Busca tu agencia More',
             mapboxgl: mapboxgl
         })
     );
@@ -415,7 +546,19 @@ center: currentFeature.geometry.coordinates,
 zoom: 15
 });
 }
- 
+
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+// When active the map will receive updates to the device's location as it changes.
+trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+showUserHeading: true
+}), 'bottom-right'
+)
+
 /**
 * Create a Mapbox GL JS `Popup`.
 **/
